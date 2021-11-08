@@ -1,2 +1,2 @@
 # blog
-Review Blog
+Creating a Review Blog for Web Novels
