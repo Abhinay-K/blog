@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+
+{%block content%}
+<h3>{{review.name}} Chapter No-{{review.chapter_no}}/{{review.date}}</h3><br/>
+<hr>
+<br/>
+<h3>Review</h3>
+<p>{{review.description}}</p>
+<a href="{%url 'home'%}">back</a>
+{%endblock%}

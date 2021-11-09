@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+{%block content%}
+<div >
+   {% for rev in object_list %}
+    <div style="background-color:rgb(102, 255, 204);padding: 5px 30px 30px 30px; margin: 25px 25px 25px 25px;border-radius:15px;">
+        <span><a href="{% url 'review' rev.pk %}"> {{rev.name}} </a> </span>
+        <span style="border: 2px solid rgba(255, 166, 0, 0.705);">{{rev.chapter_no}}</span>
+        <span style="border: 2px solid rgba(255, 166, 0, 0.705);">{{rev.date}}</span>
+        <p>{{rev.description}}</p>
+    </div>
+    {% endfor %}
+</div>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v12.0" nonce="uNX8yfy3"></script>
+<div class="fb-comments" data-href="http://127.0.0.1:8000/" data-width="" data-numposts="5"></div>
+{%endblock%}

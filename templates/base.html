@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Website Layout | CodingLab</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    
+   </head>
+<body>
+  
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="">Novel Review</a>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        {% if user.is_authenticated %}
+        <li><h3 style="color: antiquewhite;">Hello {{user.first_name}}</h3></li>
+        <li><a href="accounts/logout">Logout</a></li>
+        {% else %}
+        <li><a href="accounts/register">Registration</a></li>
+        <li><a href="accounts/login">Login</a></li>
+        {% endif %}
+        <li><a href="post_a_review">Post</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  
+  {% block content%}
+        
+  {% endblock %}
+  
+</body>
+</html>

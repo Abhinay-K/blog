@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+{%block content%}
+<h2>Post a Review</h2>
+<form action="post_a_review" method="POST">
+    {% csrf_token %}
+    {{forms}}
+    <input type="submit" ><br/>
+</form>
+{%endblock%}
+
